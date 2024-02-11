@@ -6,6 +6,7 @@ import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
+//import { refs } from './pixabay-api';
 
 function searchImages() { //объявление функции
     const searchPicture = document.querySelectorById("searchInput").value;
