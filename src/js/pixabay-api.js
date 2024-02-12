@@ -8,7 +8,8 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 //import { refs } from './pixabay-api';
 
-function searchRequest() { //объявление функции
+function searchRequest(event) { //объявление функции
+    event.preventDefault();
     const apiKey = '42334631-07f239856d3b6a49db441bfb9';
     const searchPicture = document.getElementById("searchRequest").value.trim();
     //находим элемент с id ("searchRequest") (поле ввода) и получаем его значение (текст, введенный пользователем).
