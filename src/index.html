@@ -11,8 +11,22 @@
 
 <body>
   <h1>Search for images</h1>
-  <input type="text" id="searchInput" placeholder="Enter the key word">
-  <button onclick="searchImages()">Find <picture></picture></button>
+
+  <form id="searchForm" action="url_для_виконання_HTTP_запиту" method="GET" onsubmit="return searchRequest()">
+    <!-- Відкриття форми для пошуку з вказанням методу та дії -->
+    <!-- Цей атрибут (action) вказує, куди буде відправлено введені дані після натискання кнопки "submit" у формі. -->
+    <!-- атрибут method визначає HTTP-метод, який буде використовуватися для відправлення даних форми. -->
+    <!-- атрибутна подія onsubmit вказує на JavaScript-функцію, яка буде викликана, 
+      коли користувач натисне кнопку "submit" у формі перед тим, як дані будуть відправлені.
+       У цьому випадку, це вказує на те, що перед відправленням форми, 
+       необхідно виконати функцію vsearchRequest(), і якщо ця функція поверне true, 
+       то форма буде відправлена, а якщо false - вона не буде відправлена. -->
+
+    <label for="searchRequest">Enter data for the request</label> <!-- Підпис поблизу поля введення -->
+    <input type="text" id="searchRequest" name="searchRequest" required>
+    <!-- Поле для введення тексту з обов'язковим заповненням -->
+    <button type="submit">Search</button> <!-- Кнопка для відправки форми -->
+  </form>
   <div id="gallery"></div>
 
   <script type="module" src="./js/pixabay-api.js"></script>
