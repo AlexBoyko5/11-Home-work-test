@@ -74,3 +74,5 @@ function searchRequest(event) { //объявление функции
     return false; // чтобы форма не отправлялась после отправки запроса
 }
 
+const form = document.getElementById('searchForm');
+form.addEventListener('submit', handleFormSubmit);

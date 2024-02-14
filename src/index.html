@@ -12,7 +12,7 @@
 <body>
   <h1>Search for images</h1>
 
-  <form id="searchForm" action="url_для_виконання_HTTP_запиту" method="GET" onsubmit="return searchRequest(event)">
+  <form id="searchForm">
     <!-- Відкриття форми для пошуку з вказанням методу та дії -->
     <!-- Цей атрибут (action) вказує, куди буде відправлено введені дані після натискання кнопки "submit" у формі. -->
     <!-- атрибут method визначає HTTP-метод, який буде використовуватися для відправлення даних форми. -->
@@ -29,8 +29,8 @@
   </form>
   <div id="gallery"></div>
 
-  <script type="module" src="./js/pixabay-api.js"></script>
-  <script type="module" src="./js/render-functions.js"></script>
+
+  <script type="module" src="/main.js"></script>
 </body>
 
 </html>
