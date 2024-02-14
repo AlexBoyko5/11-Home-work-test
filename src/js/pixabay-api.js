@@ -8,7 +8,7 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 //import { refs } from './pixabay-api';
 
-function searchRequest(event) { //объявление функции
+function handleFormSubmit(event) { //объявление функции
     event.preventDefault();
     const apiKey = '42334631-07f239856d3b6a49db441bfb9';
     const searchPicture = document.getElementById("searchRequest").value.trim();
@@ -34,7 +34,7 @@ function searchRequest(event) { //объявление функции
         safesearch: true
     });
 
-    fetch(`https://api.example.com/api/?${params}`)/// Отправка запроса к API Pixabay с использованием
+    fetch(`https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(searchPicture)}${params}`)/// Отправка запроса к API Pixabay с использованием
         // параметров(params) запроса к серверу по указанному URL.
 
         // Проверка успешности ответа
