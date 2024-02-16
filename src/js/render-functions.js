@@ -1,50 +1,11 @@
-// // Функція для очищення галереї
-// export function clearGallery() {
-//     const gallery = document.getElementById('gallery');
-//     gallery.innerHTML = '';
-// }
-// export { clearGallery };
-// // Функція для додавання карток зображень до галереї
-// export function addImagesToGallery(images) {
-//     const gallery = document.getElementById('gallery');
-//     images.forEach(image => {
-//         gallery.innerHTML += `
-//         <a href="${image.largeImageURL}">
-//         <img src="${image.webformatURL}" alt="${image.tags}">
-
-//         <div class="image-info">
-//         <span>Likes:${image.user_likes}</span>
-//         <span>Views:${image.user_views}</span>
-//         <span>Comments:${image.user_comments}</span>
-//         <span>Downloads:${image.user_downloads}</span>
-
-//         </div>
-//         </a>`;
-//     });
-//     // Оновити lightbox після додавання нових елементів
-//     new SimpleLightbox('.gallery a').refresh();
-// }
-// // Функція для показу індикатора завантаження
-// export function showLoader() {
-//     const loader = document.querySelector('.loader');
-//     loader.style.display = 'block';
-// }
-// export function hideLoader() {
-//     const loader = document.querySelector('.loader');
-//     loader.style.display = 'none';
-// }
 
 //^=============================================================
 
-export function clearGallery() {
-    const gallery = document.getElementById('gallery');
-    gallery.innerHTML = '';
-}
-clearGallery();
 // Функція для додавання карток зображень до галереї
 
 export function addImagesToGallery(images) {
     const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
     images.forEach(image => {
         // создать новый элемент <a>
         const link = document.createElement('a');
