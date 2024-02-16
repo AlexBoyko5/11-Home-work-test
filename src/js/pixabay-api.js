@@ -76,3 +76,4 @@ function handleFormSubmit(event) { //объявление функции
 
 const form = document.getElementById('searchForm');
 form.addEventListener('submit', handleFormSubmit);
+event.currentTarget.reset()

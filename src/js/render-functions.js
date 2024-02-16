@@ -40,4 +40,3 @@ export function addImagesToGallery(images) {
     // Оновити lightbox після додавання нових елементів
     new SimpleLightbox('.gallery a').refresh();
 }
-
