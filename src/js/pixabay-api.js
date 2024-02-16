@@ -7,6 +7,7 @@ import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 //import { refs } from './pixabay-api';
+import { addImagesToGallery } from './render-functions';
 
 function handleFormSubmit(event) { //объявление функции
     event.preventDefault();
@@ -57,11 +58,19 @@ function handleFormSubmit(event) { //объявление функции
                     message: 'Sorry, there are no images matching your search query. Please try again!'
                 });
             } else {
-                data.hits.forEach(image => { // Перебор найденных изображений и добавление их в галерею
-                    gallery.innerHTML += `<a href="${image.largeImageURL}"><img src="${image.previewURL}" alt="${image.tags}"></a>`;
-                });
+                const galleryMarkup = data.hits.map(image => {
+                    return `<a href="${image.largeImageURL}">
+<img src="${image.previewURL}" alt="${image.tags}">
+<div class="image-info">
+<span>Likes: ${image.likes}</span>
+<span>Views: ${image.views}</span>
+<span>Comments: ${image.comments}</span>
+<span>Downloads: ${image.downloads}</span>
+</div>
+                    </a>`;
+                }).join('');//объединение массива
+                gallery.innerHTML = galleryMarkup;// добавляем всю разметку в галерею одномоментно
                 new SimpleLightbox('.gallery a'); // инициализируем SimpleLightbox для всех ссылок
-                //на изображения в галерее после того, как они были добавлены.
             }
         })
         .catch(error => {
@@ -71,9 +80,9 @@ function handleFormSubmit(event) { //объявление функции
                 message: 'Failed to fetch images. Please try again later.'
             });
         });
+    event.currentTarget.reset()//!очистка поля ввода
     return false; // чтобы форма не отправлялась после отправки запроса
 }
 
 const form = document.getElementById('searchForm');
 form.addEventListener('submit', handleFormSubmit);
-event.currentTarget.reset()
