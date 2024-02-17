@@ -9,8 +9,11 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 //import { refs } from './pixabay-api';
 import { addImagesToGallery } from './render-functions';
 
+const loader = document.getElementById('loader');
+
 function handleFormSubmit(event) { //объявление функции
     event.preventDefault();
+    loader.style.display = 'block';
     const apiKey = '42334631-07f239856d3b6a49db441bfb9';
     const searchPicture = document.getElementById("searchRequest").value.trim();
     //находим элемент с id ("searchRequest") (поле ввода) и получаем его значение (текст, введенный пользователем).
@@ -72,13 +75,15 @@ function handleFormSubmit(event) { //объявление функции
                 gallery.innerHTML = galleryMarkup;// добавляем всю разметку в галерею одномоментно
                 new SimpleLightbox('.gallery a'); // инициализируем SimpleLightbox для всех ссылок
             }
+            loader.style.display = 'none';
         })
         .catch(error => {
             console.error('Error fetching images:', error);
             iziToast.error({
                 title: 'Error',
-                message: 'Failed to fetch images. Please try again later.'
+                message: 'Failed to fetch images. Please try again later.',
             });
+            loader.style.display = 'none';
         });
     event.currentTarget.reset()//!очистка поля ввода
     return false; // чтобы форма не отправлялась после отправки запроса
@@ -86,3 +91,4 @@ function handleFormSubmit(event) { //объявление функции
 
 const form = document.getElementById('searchForm');
 form.addEventListener('submit', handleFormSubmit);
+
