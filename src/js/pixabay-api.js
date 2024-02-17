@@ -116,6 +116,7 @@ export function fetchImages(query) {
             return response.json();
         })
         .then(data => {
+            console.log(data);
             loader.style.display = 'none';
             if (data.hits.length === 0) {
                 iziToast.info({
