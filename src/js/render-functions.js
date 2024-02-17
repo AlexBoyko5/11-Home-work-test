@@ -67,10 +67,10 @@ export function createGalleryMarkup(images) {
         <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
       </a>
       <div class="info">
-        <p><i class="material-icons">thumb_up</i>${image.likes}</p>
-        <p><i class="material-icons">visibility</i>${image.views}</p>
-        <p><i class="material-icons">comment</i>${image.comments}</p>
-        <p><i class="material-icons">cloud_download</i>${image.downloads}</p>
+       <p><i class="img-text">Likes </i><span>${image.likes}</span></p>
+        <p><i class="img-text">Views </i><span>${image.views}</span></p>
+        <p><i class="img-text">Comments </i><span>${image.comments}</span></p>
+        <p><i class="img-text">Downloads </i><span>${image.downloads}</span></p>
       </div>
     </div>
   `
