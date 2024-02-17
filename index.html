@@ -1,3 +1,47 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla App Template</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script type="module" crossorigin src="/11-Home-work-test/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/11-Home-work-test/assets/vendor-5b791d57.js">
+  <link rel="stylesheet" href="/11-Home-work-test/assets/vendor-cf6910df.css">
+  <link rel="stylesheet" href="/11-Home-work-test/assets/index-b2e7a404.css">
+</head>
+
+<body>
+  <h1>Search for images</h1>
+
+  <form id="searchForm">
+    <! Відкриття форми для пошуку з вказанням методу та дії -->
+<!-- Цей атрибут (action) вказує, куди буде відправлено введені дані після натискання кнопки "submit" у формі. -->
+<!-- атрибут method визначає HTTP-метод, який буде використовуватися для відправлення даних форми. -->
+<!-- атрибутна подія onsubmit вказує на JavaScript-функцію, яка буде викликана, 
+      коли користувач натисне кнопку "submit" у формі перед тим, як дані будуть відправлені.
+       У цьому випадку, це вказує на те, що перед відправленням форми, 
+       необхідно виконати функцію vsearchRequest(), і якщо ця функція поверне true, 
+       то форма буде відправлена, а якщо false - вона не буде відправлена. -->
+<!-- 
+    <label for="searchRequest">Enter data for the request</label> <!- Підпис поблизу поля введення -->
+<!-- <input type="text" id="searchRequest" name="searchRequest" required>
+    <!- Поле для введення тексту з обов'язковим заповненням -->
+<!-- <button type="submit">Search</button> Кнопка для відправки форми -->
+<!-- </form>
+  <div id="gallery" class="gallery"></div> --> ->
+<!-- елемент для індикатора завантаження -->
+<!-- <div class="loader" style="display: none;"></div>
+
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html> -->
+
+<!-- //!================================================================================================== -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,33 +51,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vanilla App Template</title>
   
-  <script type="module" crossorigin src="/11-Home-work-test/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/11-Home-work-test/assets/vendor-7659544d.js">
-  <link rel="stylesheet" href="/11-Home-work-test/assets/vendor-a51daae5.css">
-  <link rel="stylesheet" href="/11-Home-work-test/assets/index-9fd888b7.css">
 </head>
 
 <body>
-  <h1>Search for images</h1>
-
-  <form id="searchForm">
-    <!-- Відкриття форми для пошуку з вказанням методу та дії -->
-    <!-- Цей атрибут (action) вказує, куди буде відправлено введені дані після натискання кнопки "submit" у формі. -->
-    <!-- атрибут method визначає HTTP-метод, який буде використовуватися для відправлення даних форми. -->
-    <!-- атрибутна подія onsubmit вказує на JavaScript-функцію, яка буде викликана, 
-      коли користувач натисне кнопку "submit" у формі перед тим, як дані будуть відправлені.
-       У цьому випадку, це вказує на те, що перед відправленням форми, 
-       необхідно виконати функцію vsearchRequest(), і якщо ця функція поверне true, 
-       то форма буде відправлена, а якщо false - вона не буде відправлена. -->
-
-    <label for="searchRequest">Enter data for the request</label> <!-- Підпис поблизу поля введення -->
-    <input type="text" id="searchRequest" name="searchRequest" required>
-    <!-- Поле для введення тексту з обов'язковим заповненням -->
-    <button type="submit">Search</button> <!-- Кнопка для відправки форми -->
-  </form>
-  <div id="gallery" class="gallery"></div>
-  <!-- елемент для індикатора завантаження -->
-  <div class="loader" style="display: none;"></div>
+  <section>
+    <form id="search-form">
+      <input type="text" name="search" id="search-input" required placeholder="Search images...">
+      <button type="submit">Search</button>
+    </form>
+    <span class="loader is-hidden"></span>
+    <div class="gallery"> </div>
+  </section>
 
 
   
