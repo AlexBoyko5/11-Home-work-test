@@ -61,7 +61,7 @@ function handleFormSubmit(event) { //объявление функции
                 const galleryMarkup = data.hits.map(image => {
                     return `<a href="${image.largeImageURL}">
 <img src="${image.previewURL}" alt="${image.tags}">
-<div class="image-info">
+<div class="image-caption">
 <span>Likes: ${image.likes}</span>
 <span>Views: ${image.views}</span>
 <span>Comments: ${image.comments}</span>

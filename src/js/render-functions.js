@@ -1,8 +1,4 @@
 
-//^=============================================================
-
-// Функція для додавання карток зображень до галереї
-
 export function addImagesToGallery(images) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
@@ -13,6 +9,7 @@ export function addImagesToGallery(images) {
         const img = document.createElement('img');
         img.src = image.webformatURL;
         img.alt = image.tags;
+        container.appendChild(img);
 
         const caption = document.createElement('div');
         caption.classList.add('image-caption');
@@ -22,13 +19,12 @@ export function addImagesToGallery(images) {
             <span>Comments: ${image.user_comments}</span>
             <span>Downloads: ${image.user_downloads}</span>
         `;
-
-        container.appendChild(img);
         container.appendChild(caption);
 
         gallery.appendChild(container);
     });
 }
+
 //^=============================================================
 
 // export function addImagesToGallery(images) {
